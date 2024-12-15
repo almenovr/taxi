@@ -15,46 +15,46 @@ export interface WidgetFooterMenu {
 const widgetMenus: WidgetFooterMenu[] = [
   {
     id: "5",
-    title: "Getting started",
+    title: "",
     menus: [
-      { href: "#", label: "Installation" },
-      { href: "#", label: "Release Notes" },
-      { href: "#", label: "Upgrade Guide" },
-      { href: "#", label: "Browser Support" },
-      { href: "#", label: "Editor Support" },
+      { href: "#", label: "Алушта" },
+      { href: "#", label: "Ялта" },
+      { href: "#", label: "Севастополь" },
+      { href: "#", label: "Евпатория" },
+      { href: "#", label: "Джанкой" },
     ],
   },
   {
     id: "1",
-    title: "Explore",
+    title: "",
     menus: [
-      { href: "#", label: "Design features" },
-      { href: "#", label: "Prototyping" },
-      { href: "#", label: "Design systems" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Security" },
+      { href: "#", label: "Бахчисарай" },
+      { href: "#", label: "Феодосия" },
+      { href: "#", label: "Керчь" },
+      { href: "#", label: "Алупка" },
+      { href: "#", label: "Саки" },
     ],
   },
   {
     id: "2",
-    title: "Resources",
+    title: "",
     menus: [
-      { href: "#", label: "Best practices" },
-      { href: "#", label: "Support" },
-      { href: "#", label: "Developers" },
-      { href: "#", label: "Learn design" },
-      { href: "#", label: "Releases" },
+      { href: "#", label: "Гурзуф" },
+      { href: "#", label: "Партенит" },
+      { href: "#", label: "Кореиз" },
+      { href: "#", label: "Мисхор" },
+      { href: "#", label: "Новый Свет" },
     ],
   },
   {
     id: "4",
-    title: "Community",
+    title: "",
     menus: [
-      { href: "#", label: "Discussion Forums" },
-      { href: "#", label: "Code of Conduct" },
-      { href: "#", label: "Community Resources" },
-      { href: "#", label: "Contributing" },
-      { href: "#", label: "Concurrent Mode" },
+      { href: "#", label: "Симеиз" },
+      { href: "#", label: "Утёс" },
+      { href: "#", label: "Морское" },
+      { href: "#", label: "Балакалава" },
+      { href: "#", label: "Береговое" },
     ],
   },
 ];
@@ -92,9 +92,6 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col">
             <div className="col-span-2 md:col-span-1">
               <Logo />
-            </div>
-            <div className="col-span-2 flex items-center md:col-span-3">
-              <SocialsList1 className="flex items-center space-x-3 lg:space-x-0 lg:flex-col lg:space-y-2.5 lg:items-start" />
             </div>
           </div>
           {widgetMenus.map(renderWidgetMenuItem)}

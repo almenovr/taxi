@@ -64,15 +64,12 @@ const LocationInput: FC<LocationInputProps> = ({
   const renderRecentSearches = () => {
     return (
       <>
-        <h3 className="block mt-2 sm:mt-0 px-4 sm:px-8 font-semibold text-base sm:text-lg text-neutral-800 dark:text-neutral-100">
-          Recent searches
-        </h3>
         <div className="mt-2">
           {[
-            "Hamptons, Suffolk County, NY",
-            "Las Vegas, NV, United States",
-            "Ueno, Taito, Tokyo",
-            "Ikebukuro, Toshima, Tokyo",
+            "Ялта",
+            "Алушта",
+            "Севастополь",
+            "Судак",
           ].map((item) => (
             <span
               onClick={() => handleSelectLocation(item)}

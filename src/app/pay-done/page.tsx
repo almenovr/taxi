@@ -10,14 +10,14 @@ const PayPage: FC<PayPageProps> = () => {
     return (
       <div className="w-full flex flex-col sm:rounded-2xl space-y-10 px-0 sm:p-6 xl:p-8">
         <h2 className="text-3xl lg:text-4xl font-semibold">
-          Congratulation 🎉
+          Успешно 🎉
         </h2>
 
         <div className="border-b border-neutral-200 dark:border-neutral-700"></div>
 
         {/* ------------------------ */}
         <div className="space-y-6">
-          <h3 className="text-2xl font-semibold">Your booking</h3>
+          <h3 className="text-2xl font-semibold">Ваш заказ</h3>
           <div className="flex flex-col sm:flex-row sm:items-center">
             <div className="flex-shrink-0 w-full sm:w-40">
               <div className=" aspect-w-4 aspect-h-3 sm:aspect-h-4 rounded-2xl overflow-hidden">
@@ -25,7 +25,7 @@ const PayPage: FC<PayPageProps> = () => {
                   fill
                   alt=""
                   className="object-cover"
-                  src="https://images.pexels.com/photos/6373478/pexels-photo-6373478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  src="https://images.pexels.com/photos/3036525/pexels-photo-3036525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 />
               </div>
             </div>

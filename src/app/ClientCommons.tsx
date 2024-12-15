@@ -29,7 +29,8 @@ const ClientCommons = () => {
     };
   }, [pathname]);
 
-  return <></>;
+  return <>
+  </>;
 };
 
 export default ClientCommons;

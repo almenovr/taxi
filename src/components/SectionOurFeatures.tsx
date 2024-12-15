@@ -29,40 +29,22 @@ const SectionOurFeatures: FC<SectionOurFeaturesProps> = ({
           type === "type1" ? "lg:pl-16" : "lg:pr-16"
         }`}
       >
-        <span className="uppercase text-sm text-gray-400 tracking-widest">
-          BENnefits
-        </span>
-        <h2 className="font-semibold text-4xl mt-5">Happening cities </h2>
+        <h2 className="font-semibold text-4xl mt-5">Междугороднее такси Крыма и Юга России </h2>
 
         <ul className="space-y-10 mt-16">
           <li className="space-y-4">
-            <Badge name="Advertising" />
-            <span className="block text-xl font-semibold">
-              Cost-effective advertising
-            </span>
             <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              With a free listing, you can advertise your rental with no upfront
-              costs
+               Компания "Междугороднее такси Крыма и Юга России" рада предложить вам круглосуточные услуги по перевозке пассажиров между всеми крупными городами Крыма и Юга России. Наши офисы расположены в таких городах, как Симферополь, Ялта, Севастополь, Алушта, Евпатория, Феодосия, Анапа, Краснодар, Адлер, Сочи, Ростов-на-Дону, Ставрополь и Минеральные Воды.
             </span>
           </li>
           <li className="space-y-4">
-            <Badge color="green" name="Exposure " />
-            <span className="block text-xl font-semibold">
-              Reach millions with Chisfis
-            </span>
             <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              Millions of people are searching for unique places to stay around
-              the world
+              Наши автомобили осуществляют перевозки между всеми городами Крыма и Юга России, включая популярные маршруты, такие как Симферополь-Ялта, Симферополь-Севастополь, Симферополь-Алушта и многие другие.
             </span>
           </li>
           <li className="space-y-4">
-            <Badge color="red" name="Secure" />
-            <span className="block text-xl font-semibold">
-              Secure and simple
-            </span>
             <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-              A Holiday Lettings listing gives you a secure and easy way to take
-              bookings and payments online
+                Мы гордимся тем, что являемся лидерами в сфере междугородних перевозок в Крыму и предлагаем удобные услуги по встрече гостей на железнодорожном вокзале и доставке их в любой город Крыма. Наши автомобили доступны для заказа круглосуточно, и мы гарантируем комфортное и безопасное путешествие.
             </span>
           </li>
         </ul>

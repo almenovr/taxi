@@ -11,7 +11,7 @@ export interface SectionHowItWorkProps {
   data?: {
     id: number;
     title: string;
-    desc: string;
+    desc?: string;
     img: StaticImageData;
     imgDark?: StaticImageData;
   }[];
@@ -21,20 +21,17 @@ const DEMO_DATA: SectionHowItWorkProps["data"] = [
   {
     id: 1,
     img: HIW1img,
-    title: "Book & relax",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
+    title: "Закажите трансфер",
   },
   {
     id: 2,
     img: HIW2img,
-    title: "Smart checklist",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
+    title: "Наслаждайтесь отдыхом",
   },
   {
     id: 3,
     img: HIW3img,
-    title: "Save more",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
+    title: "Экономьте с нами",
   },
 ];
 
@@ -47,8 +44,8 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
       className={`nc-SectionHowItWork  ${className}`}
       data-nc-id="SectionHowItWork"
     >
-      <Heading isCenter desc="Keep calm & travel on">
-        How it work
+      <Heading isCenter desc="Сохраняйте спокойствие и путешествуйте дальше">
+        Как это работает
       </Heading>
       <div className="mt-20 relative grid md:grid-cols-3 gap-20">
         <Image

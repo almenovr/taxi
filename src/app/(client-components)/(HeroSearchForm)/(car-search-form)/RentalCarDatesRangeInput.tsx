@@ -9,6 +9,7 @@ import DatePickerCustomHeaderTwoMonth from "@/components/DatePickerCustomHeaderT
 import DatePickerCustomDay from "@/components/DatePickerCustomDay";
 import ClearDataButton from "../ClearDataButton";
 import ButtonSubmit from "../ButtonSubmit";
+import {ru} from "date-fns/locale";
 
 export interface RentalCarDatesRangeInputProps {
   className?: string;
@@ -22,7 +23,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
   hasButtonSubmit = true,
 }) => {
   const [startDate, setStartDate] = useState<Date | null>(
-    new Date("2023/03/01")
+    new Date()
   );
   const [endDate, setEndDate] = useState<Date | null>(new Date("2023/03/16"));
 
@@ -34,29 +35,19 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
 
   const renderInput = () => {
     return (
-      <>
-        <div className="text-neutral-300 dark:text-neutral-400">
-          <CalendarIcon className="w-5 h-5 lg:w-7 lg:h-7" />
-        </div>
-        <div className="flex-grow text-left">
-          <span className="block xl:text-lg font-semibold">
-            {startDate?.toLocaleDateString("en-US", {
-              month: "short",
-              day: "2-digit",
-            }) || "Add dates"}
-            {endDate
-              ? " - " +
-                endDate?.toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "2-digit",
-                })
-              : ""}
-          </span>
-          <span className="block mt-1 text-sm text-neutral-400 leading-none font-light">
-            {"Pick up - Drop off"}
-          </span>
-        </div>
-      </>
+        <>
+            <div className="text-neutral-300 dark:text-neutral-400">
+                <CalendarIcon className="w-5 h-5 lg:w-7 lg:h-7" />
+            </div>
+            <div className="flex-grow text-left">
+    <span className="block xl:text-lg font-semibold">
+      {startDate?.toLocaleDateString("ru", {
+          month: "short",
+          day: "2-digit",
+      }) || "Select date"}
+    </span>
+            </div>
+        </>
     );
   };
 
@@ -105,22 +96,21 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
             >
               <Popover.Panel className="absolute left-1/2 z-10 mt-3 top-full w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
                 <div className="overflow-hidden rounded-3xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-neutral-800 p-8">
-                  <DatePicker
-                    selected={startDate}
-                    onChange={onChangeDate}
-                    startDate={startDate}
-                    endDate={endDate}
-                    selectsRange
-                    monthsShown={2}
-                    showPopperArrow={false}
-                    inline
-                    renderCustomHeader={(p) => (
-                      <DatePickerCustomHeaderTwoMonth {...p} />
-                    )}
-                    renderDayContents={(day, date) => (
-                      <DatePickerCustomDay dayOfMonth={day} date={date} />
-                    )}
-                  />
+                    <DatePicker
+                        locale={ru}
+                        selected={startDate}
+                        onChange={(date) => setStartDate(date)}
+                        selectsRange={false}
+                        monthsShown={2}
+                        showPopperArrow={false}
+                        inline
+                        renderCustomHeader={(p) => (
+                            <DatePickerCustomHeaderTwoMonth {...p} />
+                        )}
+                        renderDayContents={(day, date) => (
+                            <DatePickerCustomDay dayOfMonth={day} date={date} />
+                        )}
+                    />
                 </div>
               </Popover.Panel>
             </Transition>

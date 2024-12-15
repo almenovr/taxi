@@ -8,6 +8,7 @@ import { CalendarIcon } from "@heroicons/react/24/outline";
 import DatePickerCustomHeaderTwoMonth from "@/components/DatePickerCustomHeaderTwoMonth";
 import DatePickerCustomDay from "@/components/DatePickerCustomDay";
 import ClearDataButton from "@/app/(client-components)/(HeroSearchForm)/ClearDataButton";
+import {ru} from "date-fns/locale";
 
 export interface RentalCarDatesRangeInputProps {
   className?: string;
@@ -17,14 +18,12 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
   className = "",
 }) => {
   const [startDate, setStartDate] = useState<Date | null>(
-    new Date("2023/03/01")
+    new Date()
   );
-  const [endDate, setEndDate] = useState<Date | null>(new Date("2023/03/16"));
 
   const onChangeDate = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
     setStartDate(start);
-    setEndDate(end);
   };
 
   const renderInput = () => {
@@ -39,16 +38,9 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
               month: "short",
               day: "2-digit",
             }) || "Add dates"}
-            {endDate
-              ? " - " +
-                endDate?.toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "2-digit",
-                })
-              : ""}
           </span>
           <span className="block mt-1 text-sm text-neutral-400 leading-none font-light">
-            {"Pick up - Drop off"}
+            {"Выберите дату"}
           </span>
         </div>
       </>
@@ -89,22 +81,21 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
             >
               <Popover.Panel className="absolute z-10 mt-3 top-full right-0 xl:-right-10 w-screen max-w-sm px-4 sm:px-0 lg:max-w-3xl">
                 <div className="overflow-hidden rounded-3xl shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-neutral-800 p-8">
-                  <DatePicker
-                    selected={startDate}
-                    onChange={onChangeDate}
-                    startDate={startDate}
-                    endDate={endDate}
-                    selectsRange
-                    monthsShown={2}
-                    showPopperArrow={false}
-                    inline
-                    renderCustomHeader={(p) => (
-                      <DatePickerCustomHeaderTwoMonth {...p} />
-                    )}
-                    renderDayContents={(day, date) => (
-                      <DatePickerCustomDay dayOfMonth={day} date={date} />
-                    )}
-                  />
+                    <DatePicker
+                        locale={ru}
+                        selected={startDate}
+                        onChange={(date) => setStartDate(date)}
+                        selectsRange={false}
+                        monthsShown={2}
+                        showPopperArrow={false}
+                        inline
+                        renderCustomHeader={(p) => (
+                            <DatePickerCustomHeaderTwoMonth {...p} />
+                        )}
+                        renderDayContents={(day, date) => (
+                            <DatePickerCustomDay dayOfMonth={day} date={date} />
+                        )}
+                    />
                 </div>
               </Popover.Panel>
             </Transition>

@@ -14,69 +14,57 @@ import SectionBecomeAnAuthor from "@/components/SectionBecomeAnAuthor";
 import SectionVideos from "@/components/SectionVideos";
 import SectionClientSay from "@/components/SectionClientSay";
 
+async function getStrapiData(path: string) {
+  const baseUrl = 'http://localhost:1337';
+  try {
+    const response = await fetch(baseUrl + path);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 const DEMO_CATS: TaxonomyType[] = [
   {
     id: "1",
     href: "/listing-stay-map",
-    name: "New Yourk",
+    name: "Ялта",
     taxonomy: "category",
-    count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/64271/queen-of-liberty-statue-of-liberty-new-york-liberty-statue-64271.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "https://images.pexels.com/photos/10294053/pexels-photo-10294053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     id: "2",
     href: "/listing-stay-map",
-    name: "Singapore",
+    name: "Севастополь",
     taxonomy: "category",
-    count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/7740160/pexels-photo-7740160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/8720839/pexels-photo-8720839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     id: "3",
     href: "/listing-stay-map",
-    name: "Paris",
+    name: "Судак",
     taxonomy: "category",
-    count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/10546918/pexels-photo-10546918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     id: "4",
     href: "/listing-stay-map",
-    name: "London",
+    name: "Балаклава",
     taxonomy: "category",
-    count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "https://images.pexels.com/photos/8768334/pexels-photo-8768334.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     id: "5",
     href: "/listing-stay-map",
-    name: "Tokyo",
+    name: "Симферополь",
     taxonomy: "category",
-    count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/4151484/pexels-photo-4151484.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  },
-  {
-    id: "6",
-    href: "/listing-stay-map",
-    name: "Maldives",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/3250613/pexels-photo-3250613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "7",
-    href: "/listing-stay-map",
-    name: "Italy",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/7740160/pexels-photo-7740160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/6051220/pexels-photo-6051220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];
 
@@ -146,7 +134,9 @@ const DEMO_CATS_2: TaxonomyType[] = [
   },
 ];
 
-function PageHome() {
+async function PageHome() {
+  const strapiData = await getStrapiData('/api/home-page');
+  console.log(strapiData);
   return (
     <main className="nc-PageHome relative overflow-hidden">
       {/* GLASSMOPHIN */}
@@ -161,49 +151,18 @@ function PageHome() {
 
         <SectionOurFeatures />
 
-        <SectionGridFeaturePlaces cardType="card2" />
 
         <SectionHowItWork />
 
-        <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black/20" />
-          <SectionSliderNewCategories
-            categories={DEMO_CATS_2}
-            categoryCardType="card4"
-            itemPerRow={4}
-            heading="Suggestions for discovery"
-            subHeading="Popular places to stay that Chisfis recommends for you"
-            sliderStyle="style2"
-          />
-        </div>
 
-        <SectionSubscribe2 />
 
-        <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
-          <SectionGridAuthorBox />
-        </div>
 
-        <SectionGridCategoryBox />
 
         <div className="relative py-16">
           <BackgroundSection />
           <SectionBecomeAnAuthor />
         </div>
 
-        <SectionSliderNewCategories
-          heading="Explore by types of stays"
-          subHeading="Explore houses based on 10 types of stays"
-          categoryCardType="card5"
-          itemPerRow={5}
-        />
-
-        <SectionVideos />
-
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionClientSay />
-        </div>
       </div>
     </main>
   );

@@ -174,17 +174,8 @@ function PageHome2() {
           subHeading="Popular places to stay that Chisfis recommends for you"
         />
 
-        <div className="relative py-16">
-          <BackgroundSection className="bg-neutral-100 dark:bg-black dark:bg-opacity-20 " />
-          <SectionGridAuthorBox boxCard="box2" />
-        </div>
 
-        <SectionSliderNewCategories
-          heading="Explore by types of stays"
-          subHeading="Explore houses based on 10 types of stays"
-          categoryCardType="card5"
-          itemPerRow={5}
-        />
+
 
         <SectionSubscribe2 />
       </div>

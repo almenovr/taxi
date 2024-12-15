@@ -72,14 +72,13 @@ function PageHome3() {
         {/* SECTION 1 */}
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 sm:col-span-6 lg:col-span-4 flex">
-            <CardCategory6 taxonomy={DEMO_CATS_2[0]} />
+
           </div>
           <div className="col-span-12 sm:col-span-6 lg:col-span-4 grid grid-rows-2 gap-6">
-            <CardCategory6 taxonomy={DEMO_CATS_2[3]} />
-            <CardCategory6 taxonomy={DEMO_CATS_2[1]} />
+
           </div>
           <div className="col-span-12 sm:col-span-6 lg:col-span-4 flex">
-            <CardCategory6 taxonomy={DEMO_CATS_2[4]} />
+
           </div>
         </div>
 
@@ -92,7 +91,7 @@ function PageHome3() {
           <SectionGridAuthorBox boxCard="box2" />
         </div>
 
-        <SectionGridFeaturePlaces />
+
 
         {/* SECTION */}
         <SectionSubscribe2 />
